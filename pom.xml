@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>graphene-sandstorm</groupId>
 	<artifactId>graphene-sandstorm</artifactId>
@@ -8,7 +9,7 @@
 	<properties>
 		<customer>sandstorm</customer>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 		<!-- properties for dependencies (usually versions) -->
 
 		<base.project.version>4.2.0</base.project.version>
@@ -24,7 +25,7 @@
 		<servlet-api-release-version>2.5</servlet-api-release-version>
 		<testng-release-version>6.3.1</testng-release-version>
 		<easymock-release-version>3.0</easymock-release-version>
-		<tapestry-release-version>5.3.7</tapestry-release-version>
+		<tapestry-release-version>5.3.8</tapestry-release-version>
 		<tapestry-model-test.version>0.5.0</tapestry-model-test.version>
 
 		<!-- Maven properties -->
@@ -177,6 +178,19 @@
 				<scope>provided</scope>
 			</dependency>
 
+			<dependency>
+				<groupId>com.thinkaurelius.titan</groupId>
+				<artifactId>titan-core</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			<!-- core, all, cassandra, hbase, berkeleyje, es, lucene -->
+
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-csv</artifactId>
+				<version>1.3</version>
+			</dependency>
 
 
 			<!-- Testing dependencies, Should not be in final Jars or Wars -->
@@ -274,7 +288,7 @@
 								<goal>test</goal>
 							</goals>
 							<inherited>false</inherited>
-							<configuration/>
+							<configuration />
 						</execution>
 					</executions>
 					<configuration>
@@ -287,7 +301,7 @@
 					<artifactId>maven-javadoc-plugin</artifactId>
 					<version>${maven-javadoc-plugin.version}</version>
 					<configuration>
-						<dependencySourceExcludes/>
+						<dependencySourceExcludes />
 						<failOnError>false</failOnError>
 					</configuration>
 				</plugin>
@@ -401,8 +415,8 @@
 			</plugin>
 		</plugins>
 	</reporting>
-  <modules>
-    <module>graphene-sandstorm-web</module>
-    <module>graphene-sandstorm-ingest</module>
-  </modules>
+	<modules>
+		<module>graphene-sandstorm-web</module>
+		<module>graphene-sandstorm-ingest</module>
+	</modules>
 </project>

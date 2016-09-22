@@ -36,7 +36,7 @@ import org.slf4j.Logger;
  * @param <T>
  * 
  */
-public abstract class sandstormParser<T> extends BasicParserESImpl<T> {
+public abstract class SandstormParser<T> extends BasicParserESImpl<T> {
 	public static final String MEDIA_ID = "mediaid";
 	public static final String MEDIA_LABEL = "medialabel";
 	public static final String MEDIA_LINK = "medialink";
@@ -120,7 +120,7 @@ public abstract class sandstormParser<T> extends BasicParserESImpl<T> {
 
 	Set<String> datesFiled;
 
-	public sandstormParser() {
+	public SandstormParser() {
 		// extractors = new ArrayList<Extractor>();
 		// extractors.add(new EmailExtractor());
 		// extractors.add(new PhoneExtractor());
@@ -213,8 +213,8 @@ public abstract class sandstormParser<T> extends BasicParserESImpl<T> {
 
 			final Collection<G_Entity> newEntities = extractor.extractEntities(id);
 
-			phgb.createOrUpdateNode(id, extractor.getIdType(), extractor.getNodetype(), attachTo,
-					extractor.getRelationType(), extractor.getRelationValue());
+			phgb.createOrUpdateNode(0, id, extractor.getIdType(), extractor.getNodetype(), attachTo,
+					extractor.getRelationType(), extractor.getRelationValue(), 0, null);
 
 			// if (ValidationUtils.isValid(attachTo, newEntities)) {
 			// logger.debug("Extracted " + extractor.getNodetype() + ": " + id
@@ -230,9 +230,8 @@ public abstract class sandstormParser<T> extends BasicParserESImpl<T> {
 	public void createExtractedNodes(final Collection<String> ids, final Extractor extractor,
 			final V_GenericNode attachTo) {
 		for (final String id : ids) {
-			final V_GenericNode extractedIdentifierNode = phgb.createOrUpdateNode(HIGH_MINIMUM_CERTAINTY, 1.0,
-					LOW_PRIORITY, id, extractor.getIdType(), extractor.getNodetype(), attachTo,
-					extractor.getRelationType(), extractor.getRelationValue(), 50.0);
+			final V_GenericNode extractedIdentifierNode = phgb.createOrUpdateNode(0.0, id, extractor.getIdType(), extractor.getNodetype(), attachTo,
+					extractor.getRelationType(), extractor.getRelationValue(), 50.0, null);
 
 			if (ValidationUtils.isValid(attachTo, extractedIdentifierNode)) {
 

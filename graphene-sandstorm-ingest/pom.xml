@@ -33,12 +33,12 @@
 			<artifactId>tapestry-javadoc</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>${base.project.groupId}</groupId>
 			<artifactId>graphene-dao-titan</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>${base.project.groupId}</groupId>
 			<artifactId>graphene-introspect</artifactId>
@@ -82,7 +82,15 @@
 			<classifier>classes</classifier>
 			<type>jar</type>
 		</dependency>
-		<!-- This includes the class files from the web application so it can be leveraged in ingest. -->
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.3</version>
+		</dependency>
+
+		<!-- This includes the class files from the web application so it can be 
+			leveraged in ingest. -->
 		<dependency>
 			<groupId>graphene-sandstorm</groupId>
 			<artifactId>graphene-sandstorm-web</artifactId>

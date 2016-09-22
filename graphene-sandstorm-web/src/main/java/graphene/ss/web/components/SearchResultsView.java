@@ -4,7 +4,7 @@ import graphene.dao.G_Parser;
 import graphene.dao.LoggingDAO;
 import graphene.dao.StyleService;
 import graphene.dao.es.JestModule;
-import graphene.ss.model.graphserver.sandstormParser;
+import graphene.ss.model.graphserver.SandstormParser;
 import graphene.model.idl.G_Constraint;
 import graphene.model.idl.G_DataAccess;
 import graphene.model.idl.G_Entity;
@@ -247,12 +247,12 @@ public class SearchResultsView {
 
 	public List<Tuple<String, String>> getAllAts() {
 		return (List<Tuple<String, String>>) PropertyHelper.getListValue(getEntity().getProperties().get(
-				sandstormParser.ALL_ATS));
+				SandstormParser.ALL_ATS));
 	}
 
 	public List<Tuple<String, String>> getAllHashTags() {
 		return (List<Tuple<String, String>>) PropertyHelper.getListValue(getEntity().getProperties().get(
-				sandstormParser.ALL_HASHTAGS));
+				SandstormParser.ALL_HASHTAGS));
 	}
 
 	public Double getAmount() {
@@ -268,12 +268,12 @@ public class SearchResultsView {
 
 	public Collection<Tuple<String, String>> getAtsInCaption() {
 		return (Collection<Tuple<String, String>>) PropertyHelper.getSingletonValue(getEntity().getProperties().get(
-				sandstormParser.ATS_IN_CAPTION));
+				SandstormParser.ATS_IN_CAPTION));
 	}
 
 	public Collection<Tuple<String, String>> getAtsInComments() {
 		return (Collection<Tuple<String, String>>) PropertyHelper.getSingletonValue(getEntity().getProperties().get(
-				sandstormParser.ATS_IN_COMMENTS));
+				SandstormParser.ATS_IN_COMMENTS));
 	}
 
 	public Collection<G_Property> getCIdentifierList() {
@@ -388,12 +388,12 @@ public class SearchResultsView {
 
 	public Collection<Tuple<String, String>> getHashTagsInCaption() {
 		return (Collection<Tuple<String, String>>) PropertyHelper.getSingletonValue(getEntity().getProperties().get(
-				sandstormParser.HASHTAGS_IN_CAPTION));
+				SandstormParser.HASHTAGS_IN_CAPTION));
 	}
 
 	public Collection<Tuple<String, String>> getHashTagsInComments() {
 		return (Collection<Tuple<String, String>>) PropertyHelper.getSingletonValue(getEntity().getProperties().get(
-				sandstormParser.HASHTAGS_IN_COMMENTS));
+				SandstormParser.HASHTAGS_IN_COMMENTS));
 	}
 
 	/**
@@ -415,48 +415,48 @@ public class SearchResultsView {
 
 	public String getMediaCaption() {
 		return (String) PropertyHelper.getSingletonValue(getEntity().getProperties().get(
-				sandstormParser.MEDIA_CAPTION_TEXT));
+				SandstormParser.MEDIA_CAPTION_TEXT));
 	}
 
 	public String getMediaCommentCount() {
 		return String.valueOf(PropertyHelper.getSingletonValue(getEntity().getProperties().get(
-				sandstormParser.MEDIA_COMMENT_COUNT)));
+				SandstormParser.MEDIA_COMMENT_COUNT)));
 	}
 
 	public Object getMediaCreatedTime() {
-		return PropertyHelper.getSingletonValue(getEntity().getProperties().get(sandstormParser.MEDIA_CREATED_TIME));
+		return PropertyHelper.getSingletonValue(getEntity().getProperties().get(SandstormParser.MEDIA_CREATED_TIME));
 	}
 
 	public String getMediaId() {
-		return (String) PropertyHelper.getSingletonValue(getEntity().getProperties().get(sandstormParser.MEDIA_ID));
+		return (String) PropertyHelper.getSingletonValue(getEntity().getProperties().get(SandstormParser.MEDIA_ID));
 	}
 
 	public String getMediaLikeCount() {
 		return String.valueOf(PropertyHelper.getSingletonValue(getEntity().getProperties().get(
-				sandstormParser.MEDIA_LIKE_COUNT)));
+				SandstormParser.MEDIA_LIKE_COUNT)));
 	}
 
 	public String getMediaLocationLatLon() {
 		return (String) PropertyHelper.getSingletonValue(getEntity().getProperties().get(
-				sandstormParser.MEDIA_LOCATION_LATLON));
+				SandstormParser.MEDIA_LOCATION_LATLON));
 	}
 
 	public String getMediaLocationName() {
 		return (String) PropertyHelper.getSingletonValue(getEntity().getProperties().get(
-				sandstormParser.MEDIA_LOCATION_NAME));
+				SandstormParser.MEDIA_LOCATION_NAME));
 	}
 
 	public String getMediaOwner() {
-		return (String) PropertyHelper.getSingletonValue(getEntity().getProperties().get(sandstormParser.MEDIA_OWNER));
+		return (String) PropertyHelper.getSingletonValue(getEntity().getProperties().get(SandstormParser.MEDIA_OWNER));
 	}
 
 	public String getMediaPageLink() {
-		return (String) PropertyHelper.getSingletonValue(getEntity().getProperties().get(sandstormParser.MEDIA_LINK));
+		return (String) PropertyHelper.getSingletonValue(getEntity().getProperties().get(SandstormParser.MEDIA_LINK));
 	}
 
 	public String getMediaThumbnail() {
 		return (String) PropertyHelper.getSingletonValue(getEntity().getProperties().get(
-				sandstormParser.MEDIA_THUMBNAIL));
+				SandstormParser.MEDIA_THUMBNAIL));
 	}
 
 	protected Messages getMessages() {
